@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{6B990CC0-2777-440A-A16F-11380F2041AA}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PcscDiag2</RootNamespace>
+    <AssemblyName>PcscDiag2-x64</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <ApplicationIcon>V:\Dossiers\etudes produits\Logiciels\Ressources\smartcard.ico</ApplicationIcon>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\..\..\..\builder\keys\springcard_codesigning_class3.pfx</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <BaseIntermediateOutputPath>obj\x86</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <IntermediateOutputPath>obj\x86\Debug</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <IntermediateOutputPath>obj\x64\Release</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\_common\console.cs">
+      <Link>console.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\library\dotnet\SpringCardPCSC.cs">
+      <Link>SpringCardPCSC.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\library\dotnet\SpringCardUtils.cs">
+      <Link>SpringCardUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\AboutForm.cs">
+      <Link>AboutForm.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\AboutForm.Designer.cs">
+      <Link>AboutForm.Designer.cs</Link>
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\_common\ShadowForm.cs">
+      <Link>ShadowForm.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\ShadowForm.Designer.cs">
+      <Link>ShadowForm.Designer.cs</Link>
+      <DependentUpon>ShadowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookmarkForm.cs" />
+    <Compile Include="BookmarkForm.Designer.cs">
+      <DependentUpon>BookmarkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardForm.cs" />
+    <Compile Include="CardForm.Designer.cs">
+      <DependentUpon>CardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardInfoForm.cs" />
+    <Compile Include="CardInfoForm.Designer.cs">
+      <DependentUpon>CardInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configs.cs" />
+    <Compile Include="ConnectForm.cs" />
+    <Compile Include="ConnectForm.Designer.cs">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContextAndListForm.cs" />
+    <Compile Include="ContextAndListForm.Designer.cs">
+      <DependentUpon>ContextAndListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisconnectForm.cs" />
+    <Compile Include="DisconnectForm.Designer.cs">
+      <DependentUpon>DisconnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EndTransactionForm.cs" />
+    <Compile Include="EndTransactionForm.Designer.cs">
+      <DependentUpon>EndTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\_common\EXListView\EXComboBox.cs">
+      <Link>EXComboBox.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\EXListView\EXListView.cs">
+      <Link>EXListView.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\BuiltInContextMenu.cs">
+      <Link>BuiltInContextMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\ByteCharConverters.cs">
+      <Link>ByteCharConverters.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\ByteCollection.cs">
+      <Link>ByteCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\BytePositionInfo.cs">
+      <Link>BytePositionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\DynamicByteProvider.cs">
+      <Link>DynamicByteProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\HexBox.cs">
+      <Link>HexBox.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\HexCasing.cs">
+      <Link>HexCasing.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\IByteProvider.cs">
+      <Link>IByteProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\NativeMethods.cs">
+      <Link>NativeMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\_common\HexBox\Util.cs">
+      <Link>Util.cs</Link>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderInfoForm.cs" />
+    <Compile Include="ReaderInfoForm.Designer.cs">
+      <DependentUpon>ReaderInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReconnectForm.cs" />
+    <Compile Include="ReconnectForm.Designer.cs">
+      <DependentUpon>ReconnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SplashForm.cs" />
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\_common\AboutForm.resx">
+      <Link>AboutForm.resx</Link>
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\_common\ShadowForm.resx">
+      <Link>ShadowForm.resx</Link>
+      <DependentUpon>ShadowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardForm.resx">
+      <DependentUpon>CardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardInfoForm.resx">
+      <DependentUpon>CardInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectForm.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContextAndListForm.resx">
+      <DependentUpon>ContextAndListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisconnectForm.resx">
+      <DependentUpon>DisconnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EndTransactionForm.resx">
+      <DependentUpon>EndTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\_common\HexBox\HexBox.resx">
+      <Link>HexBox.resx</Link>
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReaderInfoForm.resx">
+      <DependentUpon>ReaderInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReconnectForm.resx">
+      <DependentUpon>ReconnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>
